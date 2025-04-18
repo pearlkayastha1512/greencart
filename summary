@@ -1,0 +1,11 @@
+bcrypt - to encrypt the passwords
+cloudinary - to add the images in cloudinary cloud storage
+cookie-parser - we will use cookies to send authentication to server for user authentication
+cors - to connect frontend with backend
+dotenv - use dotenv files to store environment variable
+express - create backend
+jsonwebtoken - use token to authenticate the users
+mongoose - connect with mongodb database
+multer - upload the images
+stripe - online payment gateway
+nodemon- restart the server aitomatically

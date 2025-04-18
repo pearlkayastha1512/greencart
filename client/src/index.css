@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Poppins:wght@500&family=Protest+Guerrilla&display=swap');
+
+@import "tailwindcss";
+*{
+  font-family: "Outfit", sans-serif;
+}
+@theme{
+  --color-primary: #669575;
+  --color-primary-dull:#44ae7c;
+}
+
+.no-scrollbar ::-webkit-scrollbar{
+  display: none;
+}
