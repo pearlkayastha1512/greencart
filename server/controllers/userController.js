@@ -17,16 +17,17 @@ export const register = async(req,res)=>{
         if(existingUser)
             return res.json({success:false,message:"User already exists"})
             
-        const hashedPassword = await bcrypt.hash(password,10)
+        const hashedPassword = await bcrypt.hash(password,10)//(what , rounds(salts/hashes))
 
         const user = await User.create({name,email,password:hashedPassword})
 
-        const token = jwt.sign({id: user._id},process.env.JWT_SECRET,{expiresIn:'7d'});
+        const token = jwt.sign({id: user._id},process.env.JWT_SECRET,{expiresIn:'7d'}); //refresh token
+        //jwt token-> {playload,jwt secret,expiry date}
 
         res.cookie('token',token,{
             httpOnly : true, //prevent javascript to access cookie
             secure: process.env.NODE_ENV === 'production',//use secure cookie in production
-            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',//CSRF protection
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',//CSRF protection -> Cross site request forgery
             maxAge: 7*24*60*60*1000,//cookie expiration time
             
         })
@@ -48,16 +49,18 @@ export const login = async(req,res)=>{
         const user = await User.findOne({email});
 
         if(!user){
-            return res.json({success:false,message:'Invalud email or password'});
+            return res.json({success:false,message:'Invalid email or password'});
         }
         const isMatch = await bcrypt.compare(password,user.password)
 
         if(!isMatch)
-            return res.json({success:false,message:'Invalud email or password'});
+            return res.json({success:false,message:'Invalid email or password'});
         const token = jwt.sign({id: user._id},process.env.JWT_SECRET,{expiresIn:'7d'});
 
+
+        //cookie-> name of cookie,cookie data,options
         res.cookie('token',token,{
-            httpOnly : true, //prevent javascript to access cookie
+            httpOnly : true, //prevent javascript to access cookie at client side
             secure: process.env.NODE_ENV === 'production',//use secure cookie in production
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',//CSRF protection
             maxAge: 7*24*60*60*1000,//cookie expiration time
@@ -100,3 +103,6 @@ export const logout  = async(req,res)=>{
         res.json({success:false,message:error.message});
     }
 }
+
+//jwt is a bearer token
+//ye token jiske paas hai usko data jaega

@@ -12,7 +12,7 @@ const authUser = async (req,res,next)=>{
     try{
         const tokenDecode = jwt.verify(token,process.env.JWT_SECRET)
         if (tokenDecode.id) {
-            req.user = tokenDecode.id; // ✅ store in req.user instead of req.body
+            req.user = {_id:tokenDecode.id}; // ✅ store in req.user instead of req.body
             next();
         } else {
             return res.status(401).json({ success: false, message: 'Invalid Token' });

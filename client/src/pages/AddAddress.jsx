@@ -30,7 +30,7 @@ const AddAddress = () => {
     const handleChange = (e)=>{
         const {name,value} = e.target;
 
-        setAddresses((prevAddress)>({
+        setAddresses((prevAddress)=>({
             ...prevAddress,
             [name]: value,
         }))

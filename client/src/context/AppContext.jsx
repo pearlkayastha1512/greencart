@@ -78,6 +78,7 @@ export const AppContextProvider = ({children}) =>{
     //update cart item quantity
     const updateCartItem = (itemId,quantity)=>{
         let cartData = structuredClone(cartItems);
+        cartData[itemId] = quantity;
         setCartItems(cartData)
         toast.success("Cart Updated");
     }
@@ -134,7 +135,9 @@ export const AppContextProvider = ({children}) =>{
     useEffect(()=>{
         const updateCart = async()=>{
             try {
-                const {data} = await axios.post('/api/cart/update',{cartItems})
+                const {data} = await axios.post('/api/cart/update',{
+                    // userId:user._id,
+                    cartItems})
                 if(!data.success){
                     toast.error(data.message)
                 }
@@ -184,3 +187,13 @@ export const useAppContext = () =>{
 
 // Force update (very rare — via useReducer or forceUpdate)
 //“Oh! Something changed. Let me re-run this component and update the screen.”
+
+
+// - This line **imports two functions** from React:
+//   - `createContext`: Used to create a **context** — a way to share data (like user, theme, cart, etc.) across components **without passing props manually** at every level.
+//   - `useContext`: A React **hook** that lets you access the context from inside your components.
+
+// ---
+
+// ### ```js
+// export const AppContext = createContext();
