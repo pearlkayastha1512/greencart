@@ -161,24 +161,24 @@ const Navbar = () => {
             <div className="hidden sm:flex items-center gap-8">
                 <NavLink 
                     to="/" 
-                    className="relative text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative text-gray-700 hover:text-primary-dull transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                     Home
                 </NavLink>
                 <NavLink 
                     to="/products" 
-                    className="relative text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative text-gray-700 hover:text-primary-dull transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                     All Products
                 </NavLink>
                 <NavLink 
                     to="/" 
-                    className="relative text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-orange-600 after:transition-all after:duration-300 hover:after:w-full"
+                    className="relative text-gray-700 hover:text-primary-dull transition-colors duration-200 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
                 >
                     Contact
                 </NavLink>
 
-                <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full transition-all duration-200 hover:border-orange-400 hover:shadow-md focus-within:border-orange-500 focus-within:shadow-lg">
+                <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full transition-all duration-200 hover:border-primary-dull hover:shadow-md focus-within:border-primary focus-within:shadow-lg">
                     <input 
                         onChange={(e)=> setSearchQuery(e.target.value)} 
                         className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500 transition-all duration-200" 
@@ -201,7 +201,7 @@ const Navbar = () => {
                         alt="cart" 
                         className='w-6 opacity-80 transition-all duration-200 group-hover:opacity-100'
                     />
-                    <button className="absolute -top-2 -right-3 text-xs text-white bg-orange-600 w-[18px] h-[18px] rounded-full transition-all duration-200 animate-pulse group-hover:animate-bounce">
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full transition-all duration-200 animate-pulse group-hover:animate-bounce">
                         {getCartCount()}
                     </button>
                 </div>
@@ -209,7 +209,7 @@ const Navbar = () => {
                 {!user? (
                     <button 
                         onClick={()=> setShowUserLogin(true)} 
-                        className="cursor-pointer px-8 py-2 bg-orange-600 hover:bg-orange-700 transition-all duration-200 text-white rounded-full transform hover:scale-105 hover:shadow-lg active:scale-95"
+                        className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all duration-200 text-white rounded-full transform hover:scale-105 hover:shadow-lg active:scale-95"
                     >
                         Login
                     </button>
@@ -227,13 +227,13 @@ const Navbar = () => {
                             onClick={()=> navigate('/my-orders')} 
                             className='p-1.5 pl-3 hover:bg-orange-50 cursor-pointer transition-colors duration-150 flex items-center gap-2'
                         >
-                            <span className="text-orange-600">📦</span> My Orders
+                            <span className="text-primary">📦</span> My Orders
                         </li>
                         <li 
                             onClick={logout} 
-                            className='p-1.5 pl-3 hover:bg-orange-50 cursor-pointer transition-colors duration-150 flex items-center gap-2'
+                            className='p-1.5 pl-3 hover:bg-primary cursor-pointer transition-colors duration-150 flex items-center gap-2'
                         >
-                            <span className="text-orange-600">🚪</span> Logout
+                            <span className="text-primary-dull">🚪</span> Logout
                         </li>
                     </ul>
                 </div>
@@ -250,7 +250,7 @@ const Navbar = () => {
                         alt="cart" 
                         className='w-6 opacity-80 transition-all duration-200 group-hover:opacity-100'
                     />
-                    <button className="absolute -top-2 -right-3 text-xs text-white bg-orange-600 w-[18px] h-[18px] rounded-full transition-all duration-200 animate-pulse group-hover:animate-bounce">
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-primary w-[18px] h-[18px] rounded-full transition-all duration-200 animate-pulse group-hover:animate-bounce">
                         {getCartCount()}
                     </button>
                 </div>
@@ -275,30 +275,30 @@ const Navbar = () => {
                         onClick={() => setOpen(false)}
                         className="w-full py-2 px-3 rounded-lg hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2"
                     >
-                        <span className="text-orange-600">🏠</span> Home
+                        <span className="text-primary">🏠</span> Home
                     </NavLink>
                     <NavLink 
                         to="/products" 
                         onClick={() => setOpen(false)}
                         className="w-full py-2 px-3 rounded-lg hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2"
                     >
-                        <span className="text-orange-600">🍽️</span> All Products
+                        <span className="text-primary">🍽️</span> All Products
                     </NavLink>
                     {user &&
                         <NavLink 
                             to="/my-orders" 
                             onClick={() => setOpen(false)}
-                            className="w-full py-2 px-3 rounded-lg hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2"
+                            className="w-full py-2 px-3 rounded-lg hover:bg-primary transition-colors duration-200 flex items-center gap-2"
                         >
-                            <span className="text-orange-600">📦</span> My Orders
+                            <span className="text-primary">📦</span> My Orders
                         </NavLink>
                     }
                     <NavLink 
                         to="/" 
                         onClick={() => setOpen(false)}
-                        className="w-full py-2 px-3 rounded-lg hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2"
+                        className="w-full py-2 px-3 rounded-lg hover:bg-primary transition-colors duration-200 flex items-center gap-2"
                     >
-                        <span className="text-orange-600">📞</span> Contact
+                        <span className="text-primary">📞</span> Contact
                     </NavLink>
                     {!user? (
                         <button 
@@ -306,14 +306,14 @@ const Navbar = () => {
                                 setOpen(false);
                                 setShowUserLogin(true);
                             }}
-                            className="cursor-pointer px-6 py-2 mt-2 bg-orange-600 hover:bg-orange-700 transition-all duration-200 text-white rounded-full text-sm transform hover:scale-105 active:scale-95"
+                            className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition-all duration-200 text-white rounded-full text-sm transform hover:scale-105 active:scale-95"
                         >
                             Login
                         </button>
                     ):(
                         <button 
                             onClick={logout} 
-                            className="cursor-pointer px-6 py-2 mt-2 bg-orange-600 hover:bg-orange-700 transition-all duration-200 text-white rounded-full text-sm transform hover:scale-105 active:scale-95"
+                            className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transition-all duration-200 text-white rounded-full text-sm transform hover:scale-105 active:scale-95"
                         >
                             Logout
                         </button> 
