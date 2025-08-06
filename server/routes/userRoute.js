@@ -10,4 +10,4 @@ userRouter.get('/is-auth',authUser,isAuth)
 userRouter.get('/logout',authUser,logout)
 
 
-export default userRouter;
+export default userRouter; 

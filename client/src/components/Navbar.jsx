@@ -134,7 +134,7 @@ const Navbar = () => {
             if(data.success){
                 toast.success(data.message);
                 setUser(null);
-                navigate('/login');
+                navigate('/');
             }else{
                 toast.error(data.message);
             }

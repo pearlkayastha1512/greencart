@@ -79,7 +79,7 @@ export const login = async(req,res)=>{
 
 export const isAuth = async(req,res)=>{
     try{
-        const {userId} = req.body;
+        const userId = req.user;
         const user = await User.findById(userId).select("-password")
         return res.json({success:true,user})
     }catch(error){
@@ -105,4 +105,4 @@ export const logout  = async(req,res)=>{
 }
 
 //jwt is a bearer token
-//ye token jiske paas hai usko data jaega
+//ye token jiske paas hai usko data

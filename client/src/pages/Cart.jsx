@@ -22,6 +22,8 @@ const Cart = () => {
   const [addresses, setAddresses] = useState([]);
   const [selectedAddress, setSelectedAddress] = useState(null);
   const [paymentOption, setPaymentOption] = useState("COD");
+
+
   const getCart = () => {
     let tempArray = [];
     for (const key in cartItems) {
@@ -31,6 +33,7 @@ const Cart = () => {
     }
     setCartArray(tempArray);
   };
+
   const getUserAddress = async () => {
     try {
       const { data } = await axios.get("/api/address/get");
@@ -282,7 +285,8 @@ const Cart = () => {
           </p>
         </div>
 
-        <button className="w-full py-3 mt-6 cursor-pointer bg-primary text-white font-medium hover:bg-primary-dull transition">
+        <button onClick={placeOrder}
+        className="w-full py-3 mt-6 cursor-pointer bg-primary text-white font-medium hover:bg-primary-dull transition">
           {paymentOption === "COD" ? "Place Order" : "Proceed to Checkout"}
         </button>
       </div>

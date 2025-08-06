@@ -16,7 +16,7 @@ const InputField = ({type,placeholder,name,handleChange,address})=>(
 const AddAddress = () => {
     const {axios,user,navigate} = useAppContext();
 
-    const [address,setAddresses] = useState({
+    const [address,setAddress] = useState({
         firstName: '',
         lastName: '',
         email: '',
@@ -30,11 +30,14 @@ const AddAddress = () => {
     const handleChange = (e)=>{
         const {name,value} = e.target;
 
-        setAddresses((prevAddress)=>({
+        setAddress((prevAddress)=>({
             ...prevAddress,
             [name]: value,
         }))
+        console.log(address);
     }
+
+    
     const onSubmitHandler = async(e) =>{
         e.preventDefault(); //stop the page from reloading
         try {

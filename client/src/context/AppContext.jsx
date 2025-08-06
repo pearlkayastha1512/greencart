@@ -122,13 +122,15 @@ export const AppContextProvider = ({children}) =>{
         return Math.floor(totalAmount * 100) / 100;
     }
 
-
     useEffect(()=>{
         fetchUser()
         fetchSeller()
         fetchProducts()
        
-    },[])//[]-> dependency array -> tells react to run code only once when the component loads
+    },[])
+
+
+    //[]-> dependency array -> tells react to run code only once when the component loads
     //won't run again unless the values in this array changes
     //because you only want to fetch data once when the app starts not every time the component re-renders.
     //update database cart items
@@ -149,6 +151,8 @@ export const AppContextProvider = ({children}) =>{
             updateCart()
         }
     },[cartItems])
+
+    
     
 //     // 🔥 Axios interceptor for handling 401 globally
 //     useEffect(() => {
