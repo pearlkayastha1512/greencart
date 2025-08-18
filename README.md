@@ -41,7 +41,7 @@ Media Management: Cloudinary
 
 Clone the repository:
 
-git clone https://github.com/your-username/Green-Cart.git
+git clone [https://github.com/your-username/Green-Cart.git](https://github.com/pearlkayastha1512/greencart)
 cd Green-Cart
 
 
@@ -98,3 +98,10 @@ Promotes sustainable and eco-friendly shopping.
 <img width="1439" height="790" alt="Screenshot 2025-08-18 at 12 10 25 PM" src="https://github.com/user-attachments/assets/9a0d0054-3bbf-43a9-b110-9c55a65577a1" />
 <img width="1439" height="790" alt="Screenshot 2025-08-18 at 12 10 18 PM" src="https://github.com/user-attachments/assets/5f7bdcf6-b42b-422b-b7f4-e8e4d42f2504" />
 
+👨‍💻 Developed By
+
+Pearl Kayastha
+
+📜 License
+
+This project is licensed under the MIT License – see the LICENSE file for details.
